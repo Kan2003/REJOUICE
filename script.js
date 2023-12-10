@@ -1,3 +1,30 @@
+function cursoreffect(){
+    var cursor = document.querySelector("#cursor");
+var page1 = document.querySelector("#page1-content");
+
+page1.addEventListener("mousemove",function(dets){
+    gsap.to(cursor ,{
+        opacity : 1,
+        left : dets.x + "px-50px",
+        top : dets.y + "px-50px",
+        // delay : 0.25
+    })
+})
+page1.addEventListener("mouseleave",function(){
+    gsap.to(cursor ,{
+        sacle : 0,
+        opacity : 0
+    })
+})
+page1.addEventListener("mouseenter",function(){
+    gsap.to(cursor ,{
+        sacle : 1,
+        opacity : 1
+    })
+})
+}
+
+cursoreffect();
 function locoscroll(){
     gsap.registerPlugin(ScrollTrigger);
 
@@ -36,33 +63,9 @@ ScrollTrigger.refresh();
 locoscroll();
 
 
-function cursoreffect(){
-    var cursor = document.querySelector("#cursor");
-var page1 = document.querySelector("#page1-content");
 
-page1.addEventListener("mousemove",function(dets){
-    gsap.to(cursor ,{
-        opacity : 1,
-        left : dets.x + "px-50px",
-        top : dets.y + "px-50px",
-        // delay : 0.25
-    })
-})
-page1.addEventListener("mouseleave",function(){
-    gsap.to(cursor ,{
-        sacle : 0,
-        opacity : 0
-    })
-})
-page1.addEventListener("mouseenter",function(){
-    gsap.to(cursor ,{
-        sacle : 1,
-        opacity : 1
-    })
-})
-}
 
-cursoreffect();
+
 
 function page2animation(){
     gsap.from("#page2 h3",{
